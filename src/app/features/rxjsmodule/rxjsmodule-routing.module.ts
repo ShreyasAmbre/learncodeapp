@@ -7,6 +7,7 @@ import { OfFromObsComponent } from './of-from-obs/of-from-obs.component';
 import { ToarrayComponent } from './toarray/toarray.component';
 import { CustomObsComponent } from './custom-obs/custom-obs.component';
 import { MapObsComponent } from './map-obs/map-obs.component';
+import { FilterObsComponent } from './filter-obs/filter-obs.component';
 
 const routes: Routes = [
   { path: "mainpage", component: MainpageComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: "toarray", component: ToarrayComponent },
   { path: "custom-obs", component: CustomObsComponent },
   { path: "map-obs", component: MapObsComponent },
+  { path: "filter-obs", component: FilterObsComponent },
 
 ];
 

@@ -1,0 +1,22 @@
+<div class="container">
+    <h3 class="my-3">filter() Operator</h3>
+    <div class="row">
+        <div class="col-6">
+            <ul>
+                <li>
+                    filter() : It use to filter out the data based on condition and pass it to component
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <b class="p-2">Ex : 01 (Using API, tap() and filter operator that trasform data and then passed to the component)</b>
+            <hr>
+            <h4>Posts</h4>
+            <ul id="elContainer" >
+                <li *ngFor="let blog of blogs">{{blog.title}} <i>- by {{blog.userId}}</i> </li>
+            </ul>
+        </div>
+    </div>
+</div>  

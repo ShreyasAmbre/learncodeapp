@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Posts } from '@core/models/post.model';
-import { from, map, Observable, tap } from 'rxjs';
+import { filter, from, map, Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +35,15 @@ export class MainService {
         return data
       })
     )
+  }
+
+
+  getPostByFilter(url: string, userId: number): Observable<Posts[]> {
+    return this.http.get<Posts[]>(url).pipe(
+      // Uncomment if you want to log the data
+      // tap(data => console.log('TAP() data', data)),
+      map(posts => posts.filter(post => post.userId == userId)) // Adjust the condition based on your requirement
+    );
   }
 
 }
