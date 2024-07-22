@@ -1,0 +1,54 @@
+<div class="container">
+    <h3 class="my-3">Custom Observable</h3>
+    <ul>
+        <li>
+            <b>Observable :</b> An observable is a producer of values or events over time. It represents a data stream that can emit 
+            zero or more values, complete, or produce an error. Observables are lazy, 
+            meaning they don't start emitting values until someone subscribes to them.
+        </li>
+        <li>
+            <b>Observer : </b> An observer is a consumer of values delivered by an observable. It is an object that defines how to 
+            handle the values emitted by the observable, as well as how to handle completion and errors.
+        </li>
+    </ul>
+    <div class="row">
+        <div class="col-6">
+            <b class="p-2">Ex : 01 (Manual)</b>
+            <hr>
+
+            <h4>Frontend Technology</h4>
+            <small><b>Data Status</b> : {{isDataStaus | titlecase}}</small>
+            <ul id="elContainer" >
+                <li [ngClass]="isDataStaus === 'pending' ? 'pending' :
+                isDataStaus === 'failed' ? 'error' : 
+                isDataStaus === 'failed' ? 'completed' : '' ">Angular</li>
+                <li [ngClass]="isDataStaus === 'pending' ? 'pending' :
+                isDataStaus === 'failed' ? 'error' : 
+                isDataStaus === 'failed' ? 'completed' : '' ">RactJs</li>
+                <li [ngClass]="isDataStaus === 'pending' ? 'pending' :
+                isDataStaus === 'failed' ? 'error' : 
+                isDataStaus === 'failed' ? 'completed' : '' ">VueJs</li>
+                <li [ngClass]="isDataStaus === 'pending' ? 'pending' :
+                isDataStaus === 'failed' ? 'error' : 
+                isDataStaus === 'failed' ? 'completed' : '' ">NodeJs</li>
+                <li [ngClass]="isDataStaus === 'pending' ? 'pending' :
+                isDataStaus === 'failed' ? 'error' : 
+                isDataStaus === 'failed' ? 'completed' : '' ">NextJs</li>
+                <li [ngClass]="isDataStaus === 'pending' ? 'pending' :
+                isDataStaus === 'failed' ? 'error' : 
+                isDataStaus === 'failed' ? 'completed' : '' ">Bootstrap</li>
+            </ul>
+        </div>
+
+        <div class="col-6">
+            <b class="p-2">Ex : 02 (Using Api Calling)</b>
+            <hr>
+
+            <h4>Frontend Technology</h4>
+            <small><b>Data Status</b> : {{isDataStaus | titlecase}}</small>
+            <ul id="elContainer" >
+                <li *ngFor="let user of finalUsers">{{user.name | titlecase}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
