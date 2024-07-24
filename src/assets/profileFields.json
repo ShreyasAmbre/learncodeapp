@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "label": "User Name",
+            "name": "name",  
+            "type": "text",
+            "validator": {
+                "required": true
+            },
+            "value": ""
+        },
+        {
+            "label": "Age",
+            "name": "age",  
+            "type": "number",
+            "validator": {
+                "required": true
+            },
+            "value": ""
+        },
+        {
+            "label": "Gender",
+            "name": "gender",  
+            "type": "dropdown",
+            "option": [
+                { "label": "Male", "value": "male" },
+                { "label": "Female", "value": "female" }
+            ],
+            "validator": {
+                "required": true
+            },
+            "value": ""
+        },
+        {
+            "label": "Address",
+            "name": "address",  
+            "type": "textarea",
+            "validator": {
+                "required": true
+            },
+            "value": ""
+        }
+    ]
+}

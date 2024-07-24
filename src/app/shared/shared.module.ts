@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 
 
@@ -15,13 +16,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule,
+    NzButtonModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     FormsModule, 
     ReactiveFormsModule, 
-    CommonModule
+    CommonModule,
+    NzButtonModule
   ]
 })
 export class SharedModule { }

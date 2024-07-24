@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Posts } from '@core/models/post.model';
+import { ProfileFormFields } from '@core/models/profile-form-fields';
 import { filter, from, map, Observable, tap } from 'rxjs';
 
 @Injectable({
@@ -44,6 +45,11 @@ export class MainService {
       // tap(data => console.log('TAP() data', data)),
       map(posts => posts.filter(post => post.userId == userId)) // Adjust the condition based on your requirement
     );
+  }
+
+
+  getProfileFormFields(): Observable<ProfileFormFields>{
+    return this.http.get<ProfileFormFields>('assets/profileFields.json')
   }
 
 }
