@@ -2,9 +2,30 @@
     "data": [
         {
             "label": "User Name",
-            "name": "name",  
+            "name": "username",  
             "type": "text",
-            "validator": {
+            "preFixIcon": "user",
+            "validators": {
+                "required": true
+            },
+            "value": ""
+        },
+        {
+            "label": "Email",
+            "name": "email",  
+            "type": "email",
+            "preFixIcon": "mail",
+            "validators": {
+                "required": true
+            },
+            "value": ""
+        },
+        {
+            "label": "Phone Number",
+            "name": "phoneno",  
+            "type": "tel",
+            "preFixIcon": "phone",
+            "validators": {
                 "required": true
             },
             "value": ""
@@ -13,20 +34,8 @@
             "label": "Age",
             "name": "age",  
             "type": "number",
-            "validator": {
-                "required": true
-            },
-            "value": ""
-        },
-        {
-            "label": "Gender",
-            "name": "gender",  
-            "type": "dropdown",
-            "option": [
-                { "label": "Male", "value": "male" },
-                { "label": "Female", "value": "female" }
-            ],
-            "validator": {
+            "preFixIcon": "",
+            "validators": {
                 "required": true
             },
             "value": ""
@@ -35,7 +44,22 @@
             "label": "Address",
             "name": "address",  
             "type": "textarea",
-            "validator": {
+            "preFixIcon": "home",
+            "validators": {
+                "required": true
+            },
+            "value": ""
+        },
+        {
+            "label": "Gender",
+            "name": "gender",  
+            "type": "dropdown",
+            "preFixIcon": "",
+            "options": [
+                { "label": "Male", "value": "male" },
+                { "label": "Female", "value": "female" }
+            ],
+            "validators": {
                 "required": true
             },
             "value": ""

@@ -5,9 +5,13 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { UserOutline } from '@ant-design/icons-angular/icons';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
-
-
+const icons = [UserOutline];
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -16,7 +20,11 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
   imports: [
     CommonModule,
     RouterModule,
-    NzButtonModule
+    NzButtonModule,
+    NzFormModule,
+    NzInputModule,
+    NzIconModule,
+    NzSelectModule
   ],
   exports: [
     HeaderComponent,
@@ -24,7 +32,11 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     FormsModule, 
     ReactiveFormsModule, 
     CommonModule,
-    NzButtonModule
+    NzButtonModule,
+    NzFormModule,
+    NzInputModule,
+    NzIconModule,
+    NzSelectModule
   ]
 })
 export class SharedModule { }

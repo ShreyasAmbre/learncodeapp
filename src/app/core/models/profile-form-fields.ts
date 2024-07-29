@@ -7,6 +7,7 @@
         label: string,
         value: string,
         type: string,
+        preFixIcon: string;
         validators: validatorJson;
         options: optionJson[];
     }

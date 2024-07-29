@@ -1,1 +1,79 @@
-<button nz-button nzType="primary">Primary</button>
+<div class="container">
+    <div class="row" style="height: 91vh;">
+        <div class="col-4 m-auto">
+
+          <br><br>
+          <h3>Dynamic Profile Form</h3>
+          <form nz-form [nzLayout]="'vertical'" [formGroup]="profileDynamicForm" (ngSubmit)="saveProfile()">
+
+            <ng-container *ngFor="let field of fieldsCollections">
+              <ng-container [ngSwitch]="field.type">
+
+                <nz-form-item *ngSwitchCase="'text'">
+                  <nz-form-control nzHasFeedback nzErrorTip="Please input your username!">
+                    <nz-input-group>
+                      <input [type]="field.type" [formControlName]="field.name" nz-input [placeholder]="field.label"/>
+                    </nz-input-group>
+                  </nz-form-control>
+                </nz-form-item>
+
+
+                <nz-form-item *ngSwitchCase="'email'">
+                  <nz-form-control nzHasFeedback nzErrorTip="Please input your email!">
+                    <nz-input-group>
+                      <input [type]="field.type" [formControlName]="field.name" nz-input [placeholder]="field.label" />
+                    </nz-input-group>
+                  </nz-form-control>
+                </nz-form-item>
+
+
+                <nz-form-item *ngSwitchCase="'tel'">
+                  <nz-form-control nzHasFeedback nzErrorTip="Please input your Phone no.!">
+                    <nz-input-group>
+                      <input [type]="field.type" [formControlName]="field.name" nz-input [placeholder]="field.label" />
+                    </nz-input-group>
+                  </nz-form-control>
+                </nz-form-item>
+
+
+                <nz-form-item *ngSwitchCase="'number'">
+                  <nz-form-control nzHasFeedback nzErrorTip="Please input your Age!">
+                    <nz-input-group>
+                      <input [type]="field.type" [formControlName]="field.name" nz-input [placeholder]="field.label" />
+                    </nz-input-group>
+                  </nz-form-control>
+                </nz-form-item>
+
+
+                <nz-form-item *ngSwitchCase="'textarea'">
+                  <nz-form-control nzHasFeedback nzErrorTip="Please input your Address!">
+                    <nz-input-group>
+                      <input [type]="field.type" [formControlName]="field.name" nz-input [placeholder]="field.label" />
+                    </nz-input-group>
+                  </nz-form-control>
+                </nz-form-item>
+
+
+                <nz-form-item *ngSwitchCase="'dropdown'">
+                  <nz-form-control nzHasFeedback [nzSpan]="12" nzErrorTip="Please select your gender!">
+                    <nz-select [id]="field.name" [formControlName]="field.name" [nzPlaceHolder]="field.label">
+                      <nz-option *ngFor="let option of field.options" [nzValue]="option.value" [nzLabel]="option.label"></nz-option>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item>
+    
+              </ng-container>
+            </ng-container>
+            <nz-form-item>
+              <nz-form-control>
+                {{profileDynamicForm.valid}}
+                <button nz-button nzType="primary" [disabled]="!profileDynamicForm.valid">Log in</button>
+              </nz-form-control>
+            </nz-form-item>
+          </form>
+
+
+
+        </div>
+    </div>
+</div>
