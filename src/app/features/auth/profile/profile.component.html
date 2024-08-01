@@ -19,19 +19,38 @@
 
 
                 <nz-form-item *ngSwitchCase="'email'">
-                  <nz-form-control nzHasFeedback nzErrorTip="Please input your email!">
+                  <nz-form-control nzHasFeedback [nzErrorTip]="emailErrorTpl">
                     <nz-input-group>
                       <input [type]="field.type" [formControlName]="field.name" nz-input [placeholder]="field.label" />
                     </nz-input-group>
+                    <ng-template #emailErrorTpl let-control>
+                      @if (control.errors?.['required']) {
+                        Please enter your phone number.
+                      }
+                      @if (control.errors?.['email']) {
+                        Invalid email.
+                      }
+                    </ng-template>
                   </nz-form-control>
                 </nz-form-item>
 
 
                 <nz-form-item *ngSwitchCase="'tel'">
-                  <nz-form-control nzHasFeedback nzErrorTip="Please input your Phone no.!">
+                  <nz-form-control nzHasFeedback [nzErrorTip]="phoneErrorTpl">
                     <nz-input-group>
                       <input [type]="field.type" [formControlName]="field.name" nz-input [placeholder]="field.label" />
                     </nz-input-group>
+                    <ng-template #phoneErrorTpl let-control>
+                      @if (control.errors?.['required']) {
+                        Please enter your phone number.
+                      }
+                      @if (control.errors?.['minlength']) {
+                        Phone no. should be greater then 6 digits.
+                      }
+                      @if (control.errors?.['maxlength']) {
+                        Phone no. should be less then 11 digits.
+                      }
+                    </ng-template>  
                   </nz-form-control>
                 </nz-form-item>
 

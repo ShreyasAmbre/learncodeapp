@@ -32,12 +32,22 @@ export class ProfileComponent implements OnInit{
 
   setDynamicForm(controls: FormFieldsJson[]){
     controls.forEach(element => {
-      let validatorCollection = []
+      let validatorCollection:any = []
       if(element.validators?.required){
         validatorCollection.push(Validators.required)
       }
+      if(element.validators?.email){
+        validatorCollection.push(Validators.email)
+      }
+      if(element.validators?.minLength){
+        validatorCollection.push(Validators.minLength(7))
+      }
+      if(element.validators?.maxLength){
+        validatorCollection.push(Validators.maxLength(10))
+      }
       this.profileDynamicForm.addControl(element.name, this.fb.control(element.value, validatorCollection))
     });
+    console.log("FROM =>", this.profileDynamicForm)
   }
 
 

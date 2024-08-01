@@ -16,7 +16,8 @@
             "type": "email",
             "preFixIcon": "mail",
             "validators": {
-                "required": true
+                "required": true,
+                "email": true
             },
             "value": ""
         },
@@ -26,7 +27,9 @@
             "type": "tel",
             "preFixIcon": "phone",
             "validators": {
-                "required": true
+                "required": true,
+                "minLength": true,
+                "maxLength": true
             },
             "value": ""
         },
